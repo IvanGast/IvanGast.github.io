@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/generated/l10n.dart';
+import 'package:myapp/presentation/shared/strings.dart';
 import 'package:myapp/presentation/shared/style/breakpoints.dart';
 import 'package:myapp/presentation/shared/style/colors.dart';
 import 'package:myapp/presentation/shared/style/spacing.dart';
@@ -7,7 +8,7 @@ import 'package:myapp/presentation/shared/style/spacing.dart';
 class WelcomeBackground extends StatelessWidget {
   const WelcomeBackground({
     super.key,
-    this.imagePath = "images/restricted_background.jpg",
+    this.imagePath = Strings.backgroundPath,
   });
 
   final String imagePath;

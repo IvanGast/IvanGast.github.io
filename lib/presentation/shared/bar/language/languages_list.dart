@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/generated/l10n.dart';
+import 'package:myapp/main_page.dart';
 import 'package:myapp/presentation/screens/root/bloc/root_cubit.dart';
 import 'package:myapp/presentation/shared/components/custom_text/custom_text.dart';
 import 'package:myapp/presentation/shared/bar/language/bloc/language_cubit.dart';
@@ -14,6 +15,7 @@ class LanguagesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LanguageCubit, LanguageState>(
+
       builder: (context, state) => Container(
         color: Colors.black,
         child: SingleChildScrollView(

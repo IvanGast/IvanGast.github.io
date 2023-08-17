@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "menu_cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "menu_contact": MessageLookupByLibrary.simpleMessage("Kontakt"),
         "menu_info": MessageLookupByLibrary.simpleMessage("Info"),
-        "menu_shop": MessageLookupByLibrary.simpleMessage("Ladnn"),
+        "menu_shop": MessageLookupByLibrary.simpleMessage("Laden"),
         "menu_title": MessageLookupByLibrary.simpleMessage("Menu"),
         "not_found_screen":
             MessageLookupByLibrary.simpleMessage("404 Nichts Gefunden"),

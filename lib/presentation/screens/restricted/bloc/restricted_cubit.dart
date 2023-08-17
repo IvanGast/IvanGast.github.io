@@ -55,14 +55,6 @@ class RestrictedCubit extends Cubit<RestrictedState> {
     }
   }
 
-  String _getQuestionTextByIndex(int index) {
-    return index == 0
-        ? S.current.restriction_question1
-        : index == 1
-            ? S.current.restriction_question2
-            : S.current.restriction_question3;
-  }
-
   void _emitQuestion(
     int index, {
     bool isCheckboxChecked = false,
@@ -71,7 +63,6 @@ class RestrictedCubit extends Cubit<RestrictedState> {
       RestrictedState(
         currentIndex: index,
         isCheckboxChecked: isCheckboxChecked,
-        questionText: _getQuestionTextByIndex(index),
       ),
     );
   }

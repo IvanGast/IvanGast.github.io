@@ -33,7 +33,10 @@ class RestrictedScreen extends StatelessWidget {
                   height: _verticalOffset,
                 ),
                 CustomText.bodyL(
-                  state.questionText,
+                  _getQuestionTextByIndex(
+                    context,
+                    state.currentIndex,
+                  ),
                   maxLines: 5,
                 ),
                 const SizedBox(
@@ -66,6 +69,14 @@ class RestrictedScreen extends StatelessWidget {
     );
   }
 
+  String _getQuestionTextByIndex(BuildContext context, int index) {
+    return index == 0
+        ? S.of(context).restriction_question1
+        : index == 1
+            ? S.of(context).restriction_question2
+            : S.of(context).restriction_question3;
+  }
+
   double get _verticalOffset =>
       Breakpoints.isMobile ? CustomSpaces.space5x : CustomSpaces.space13x;
 }
@@ -87,8 +98,7 @@ class _Checkbox extends StatelessWidget {
       children: [
         CustomButton.checkbox(
           isSelected: isChecked,
-          onPressed:
-              BlocProvider.of<RestrictedCubit>(context).checkboxPressed,
+          onPressed: BlocProvider.of<RestrictedCubit>(context).checkboxPressed,
         ),
         Container(
           margin: const EdgeInsets.only(

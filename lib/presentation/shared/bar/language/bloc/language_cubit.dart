@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/main_page.dart';
 import 'package:myapp/presentation/contracts/i_localization_service.dart';
+import 'package:myapp/presentation/services/navigation/app_root/root_navigation_service.dart';
 import 'package:myapp/presentation/services/navigation/modal/i_modal_service.dart';
 import 'package:myapp/presentation/shared/bar/language/languages_list.dart';
 import 'package:myapp/utils/locale/supported_locales.dart';
@@ -15,6 +17,7 @@ class LanguageCubit extends Cubit<LanguageState> {
 
   final _modalService = locator<IModalService>();
   final _localizationService = locator<ILocalizationService>();
+  final _rootNavigationService = locator<RootNavigationService>();
 
   void open() async {
     final selectedLocaleIndex =
@@ -30,6 +33,8 @@ class LanguageCubit extends Cubit<LanguageState> {
   void selectLanguage(int index) async {
     Locale locale = supportedLocales[index];
     _localizationService.locale = locale;
+    final context = _rootNavigationService.getContext();
+    MainPage.updateState(context, locale);
   }
 
   void selectEnglish() {

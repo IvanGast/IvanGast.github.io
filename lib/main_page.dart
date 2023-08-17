@@ -18,12 +18,26 @@ import 'package:myapp/presentation/services/navigation/app_root/root_navigation_
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
+  static void updateState(BuildContext context, Locale locale) {
+    _MainPageState? state = context.findAncestorStateOfType<_MainPageState>();
+    if (state != null) {
+      state.updateState(locale);
+    }
+  }
+
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
   final _rootNavigationService = locator<RootNavigationService>();
+  Locale _locale = S.delegate.supportedLocales[0];
+
+  void updateState(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +72,7 @@ class _MainPageState extends State<MainPage> {
         onGenerateRoute: router.generateRoute,
         navigatorKey: _rootNavigationService.baseNavigatorKey,
         scaffoldMessengerKey: _rootNavigationService.baseScaffoldMessengerKey,
+        locale: _locale,
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
