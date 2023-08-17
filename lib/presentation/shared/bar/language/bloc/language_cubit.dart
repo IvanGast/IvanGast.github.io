@@ -32,37 +32,30 @@ class LanguageCubit extends Cubit<LanguageState> {
     _localizationService.locale = locale;
   }
 
-  void selectThai() {
+  void selectEnglish() {
     selectLanguage(0);
     emit(
       const LanguageState(selectedLanguageIndex: 0),
     );
   }
 
-  void selectEnglish() {
+  void selectGerman() {
     selectLanguage(1);
     emit(
       const LanguageState(selectedLanguageIndex: 1),
     );
   }
 
-  void selectGerman() {
-    selectLanguage(2);
-    emit(
-      const LanguageState(selectedLanguageIndex: 2),
-    );
-  }
-
   int _getIndexByLocale(String languageCode) {
     switch (languageCode) {
-      case "th":
+      case "us":
         return 0;
       case "en":
-        return 1;
+        return 0;
       case "de":
-        return 2;
-      default:
         return 1;
+      default:
+        return 0;
     }
   }
 }

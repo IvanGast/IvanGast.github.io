@@ -22,31 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "cart_checkout": MessageLookupByLibrary.simpleMessage("CHECKOUT"),
+        "cart_checkout": MessageLookupByLibrary.simpleMessage("KAUFEN"),
         "cart_empty": MessageLookupByLibrary.simpleMessage("Cart is empty"),
         "category": MessageLookupByLibrary.simpleMessage("Category:"),
         "language_bar":
-            MessageLookupByLibrary.simpleMessage("ONLY ORGANIC PRODUCTS"),
-        "languages_title": MessageLookupByLibrary.simpleMessage("Languages"),
+            MessageLookupByLibrary.simpleMessage("NUR ORGANISCHE PRODUKTE"),
+        "languages_title": MessageLookupByLibrary.simpleMessage("Sprachen"),
         "menu_cart": MessageLookupByLibrary.simpleMessage("Cart"),
-        "menu_contact": MessageLookupByLibrary.simpleMessage("Contact"),
+        "menu_contact": MessageLookupByLibrary.simpleMessage("Kontakt"),
         "menu_info": MessageLookupByLibrary.simpleMessage("Info"),
-        "menu_shop": MessageLookupByLibrary.simpleMessage("Shop"),
+        "menu_shop": MessageLookupByLibrary.simpleMessage("Ladnn"),
         "menu_title": MessageLookupByLibrary.simpleMessage("Menu"),
         "not_found_screen":
-            MessageLookupByLibrary.simpleMessage("404 Not Found"),
-        "price": MessageLookupByLibrary.simpleMessage("Price:"),
-        "product": MessageLookupByLibrary.simpleMessage("Product"),
+            MessageLookupByLibrary.simpleMessage("404 Nichts Gefunden"),
+        "price": MessageLookupByLibrary.simpleMessage("Preis:"),
+        "product": MessageLookupByLibrary.simpleMessage("Produkt"),
         "product_not_found":
-            MessageLookupByLibrary.simpleMessage("Product doesn\\\'t exist"),
+            MessageLookupByLibrary.simpleMessage("Produkt existiert nicht"),
         "product_tile_button":
             MessageLookupByLibrary.simpleMessage("Add to cart"),
         "quantity": MessageLookupByLibrary.simpleMessage("Quantity:"),
         "restricted_dialog": MessageLookupByLibrary.simpleMessage(
             "If you are eligible to visit our website, please check the red cross."),
-        "restriction_continue":
-            MessageLookupByLibrary.simpleMessage("Continue"),
-        "restriction_finish": MessageLookupByLibrary.simpleMessage("FINISH"),
+        "restriction_continue": MessageLookupByLibrary.simpleMessage("Weiter"),
+        "restriction_finish":
+            MessageLookupByLibrary.simpleMessage("Abschliessen"),
         "restriction_info": MessageLookupByLibrary.simpleMessage(
             "By clicking this checkbox you admit, that you are eligible to visit our website."),
         "restriction_question1": MessageLookupByLibrary.simpleMessage(
@@ -57,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Our shop can be used only by individuals, who are working as a nurse."),
         "title": MessageLookupByLibrary.simpleMessage("Laden"),
         "total": MessageLookupByLibrary.simpleMessage("Total:"),
-        "welcome_background_title": MessageLookupByLibrary.simpleMessage("")
+        "welcome_background_title":
+            MessageLookupByLibrary.simpleMessage("Willkomen !")
       };
 }

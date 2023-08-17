@@ -41,9 +41,7 @@ class LocalizationService implements ILocalizationService {
 
   @override
   set locale(Locale locale) {
-    print(locale);
     if (supportedLocales.contains(locale)) {
-      print('CONTAINS');
       _language = LanguageCode.values.byName(locale.languageCode);
       _country = CountryCode.values.byName(locale.countryCode!);
       regionCurrency = Currency.eur;

@@ -51,41 +51,22 @@ class LanguagesList extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              _ThaiButton(
+              const SizedBox(
+                height: CustomSpaces.space,
+              ),
+              _EnglishButton(
                 isSelected: state.selectedLanguageIndex == 0,
               ),
               const SizedBox(
                 height: CustomSpaces.space,
               ),
-              _EnglishButton(
-                isSelected: state.selectedLanguageIndex == 1,
-              ),
-              const SizedBox(
-                height: CustomSpaces.space,
-              ),
               _GermanButton(
-                isSelected: state.selectedLanguageIndex == 2,
+                isSelected: state.selectedLanguageIndex == 1,
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class _ThaiButton extends StatelessWidget {
-  const _ThaiButton({required this.isSelected});
-
-  final bool isSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomButton.primarySmall(
-      text: 'THAI',
-      buttonModality: ButtonModality.lightBackground,
-      onPressed: BlocProvider.of<LanguageCubit>(context).selectThai,
-      isSelected: isSelected,
     );
   }
 }
