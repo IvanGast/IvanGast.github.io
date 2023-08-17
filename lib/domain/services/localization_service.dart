@@ -41,18 +41,21 @@ class LocalizationService implements ILocalizationService {
 
   @override
   set locale(Locale locale) {
+    print(locale);
     if (supportedLocales.contains(locale)) {
+      print('CONTAINS');
       _language = LanguageCode.values.byName(locale.languageCode);
       _country = CountryCode.values.byName(locale.countryCode!);
+      regionCurrency = Currency.eur;
       S.load(locale);
     } else {
       logDebug(
-          'Unsupported Locale, reverting to default de_DE Locale with europe as shipping region');
-      _language = LanguageCode.de;
-      _country = CountryCode.DE;
+          'Unsupported Locale, reverting to default en_GB Locale with europe as shipping region');
+      _language = LanguageCode.en;
+      _country = CountryCode.GB;
       regionCurrency = Currency.eur;
       S.load(
-        const Locale('de', 'DE'),
+        const Locale('en', 'GB'),
       );
     }
   }

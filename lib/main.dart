@@ -14,7 +14,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await SentryFlutter.init(
-    /// CHECK THIS
     (opt) => opt.dsn = '',
   );
 
