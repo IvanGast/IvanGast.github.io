@@ -26,5 +26,6 @@
   "language_bar": "NUR ORGANISCHE PRODUKTE",
   "cart_empty": "Cart is empty",
   "cart_checkout": "KAUFEN",
-  "restricted_dialog": "If you are eligible to visit our website, please check the red cross."
+  "restricted_dialog": "If you are eligible to visit our website, please check the red cross.",
+  "snackbar_product_added": "Product was added"
 }

@@ -319,6 +319,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Product was added`
+  String get snackbar_product_added {
+    return Intl.message(
+      'Product was added',
+      name: 'snackbar_product_added',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

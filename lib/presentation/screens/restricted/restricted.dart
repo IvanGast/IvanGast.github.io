@@ -10,7 +10,7 @@ import 'package:myapp/presentation/shared/style/breakpoints.dart';
 import 'package:myapp/presentation/shared/style/colors.dart';
 import 'package:myapp/presentation/shared/style/spacing.dart';
 
-double get _buttonWidth => ScreenUtil().screenWidth * 0.35;
+double get _buttonWidth => ScreenUtil().screenWidth * 0.3;
 
 class RestrictedScreen extends StatelessWidget {
   const RestrictedScreen({super.key});

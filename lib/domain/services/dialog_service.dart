@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:myapp/presentation/contracts/i_dialog_service.dart';
 import 'package:myapp/presentation/services/navigation/app_root/root_navigation_service.dart';

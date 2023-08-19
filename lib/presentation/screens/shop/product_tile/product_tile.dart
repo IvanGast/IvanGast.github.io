@@ -16,13 +16,17 @@ import 'package:myapp/presentation/shared/utils/string_utils.dart';
 
 import 'bloc/product_tile_cubit.dart';
 
-
 double get cardHeight =>
-    ((ScreenUtil().screenWidth -
-        horizontalPadding * 2 -
-        spacing * (crossAxisCount - 1)) /
-        crossAxisCount) -
-        CustomSpaces.space2x;
+    (((ScreenUtil().screenWidth -
+                horizontalPadding * 2 -
+                spacing * (crossAxisCount - 1)) /
+            crossAxisCount) -
+        CustomSpaces.space2x) *
+    (Breakpoints.isMobile ? 1.25 : 1);
+
+double get textHeight => Breakpoints.isMobile
+    ? CustomSpaces.space14x + 5
+    : CustomSpaces.space16x + 4;
 
 class ProductTile extends StatelessWidget {
   ProductTile({
@@ -81,9 +85,7 @@ class ProductTile extends StatelessWidget {
                   CustomImage(
                     imageUrl: product.image,
                     width: double.maxFinite,
-                    height: Breakpoints.isMobile
-                        ? cardHeight - CustomSpaces.space14x - 5
-                        : cardHeight - CustomSpaces.space16x - 4,
+                    height: cardHeight - textHeight,
                     backgroundColor: CustomColors.transparent,
                   ),
                   CustomText.caption(
@@ -108,7 +110,6 @@ class ProductTile extends StatelessWidget {
       },
     );
   }
-
 }
 
 class _CartButton extends StatelessWidget {
@@ -121,13 +122,13 @@ class _CartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomButton.primarySmall(
-        text: S.of(context).product_tile_button,
-        buttonModality: ButtonModality.lightBackground,
-        height: CustomSpaces.space3x,
-        useFullContentWidth: true,
-        onPressed: () {
-          BlocProvider.of<CartCubit>(context).addProduct(product);
-        },
+      text: S.of(context).product_tile_button,
+      buttonModality: ButtonModality.lightBackground,
+      height: CustomSpaces.space3x,
+      useFullContentWidth: true,
+      onPressed: () {
+        BlocProvider.of<CartCubit>(context).addProduct(product);
+      },
     );
   }
 }

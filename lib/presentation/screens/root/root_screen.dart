@@ -30,35 +30,30 @@ class RootScreen extends StatelessWidget {
       backgroundColor: CustomColors.black,
       body: BlocBuilder<RootCubit, RootState>(
         builder: (context, state) {
-          return Stack(
-            children: [
-              SingleChildScrollView(
-                child: Stack(
+          return SingleChildScrollView(
+            child: Stack(
+              children: [
+                const WelcomeBackground(),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const WelcomeBackground(),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: _topPadding,
-                        ),
-                        const LanguageBar(),
-                        if (state is Accepted) const bar.MenuBar(),
-                        const SizedBox(
-                          height: CustomSpaces.space,
-                        ),
-                        if (state is Accepted ||
-                            routeName == RestrictedScreen.route)
-                          child
-                        else
-                          _fallbackScreen,
-                      ],
+                    SizedBox(
+                      height: _topPadding,
                     ),
+                    const LanguageBar(),
+                    if (state is Accepted) const bar.MenuBar(),
+                    const SizedBox(
+                      height: CustomSpaces.space,
+                    ),
+                    if (state is Accepted ||
+                        routeName == RestrictedScreen.route)
+                      child
+                    else
+                      _fallbackScreen,
                   ],
                 ),
-              ),
-              if (Breakpoints.isMobile) _BackButton(),
-            ],
+              ],
+            ),
           );
         },
       ),
@@ -73,29 +68,4 @@ class RootScreen extends StatelessWidget {
 
   double get _topPadding =>
       Breakpoints.isMobile ? CustomSpaces.space14x : CustomSpaces.space18x;
-}
-
-class _BackButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(
-        CustomSpaces.space,
-      ),
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          100,
-        ),
-        color: CustomColors.black.withOpacity(0.3),
-      ),
-      child: CustomButton.iconNoBorder(
-        icon: Icons.arrow_back,
-        buttonModality: ButtonModality.darkBackground,
-        onPressed: BlocProvider.of<RootCubit>(context).goBack,
-        height: CustomSpaces.space4x,
-        contentWidth: CustomSpaces.space4x,
-      ),
-    );
-  }
 }

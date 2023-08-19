@@ -55,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Our shop can be used only by individuals, who are not pregnant."),
         "restriction_question3": MessageLookupByLibrary.simpleMessage(
             "Our shop can be used only by individuals, who are not working as a nurse."),
+        "snackbar_product_added":
+            MessageLookupByLibrary.simpleMessage("Product was added"),
         "title": MessageLookupByLibrary.simpleMessage("Shop"),
         "total": MessageLookupByLibrary.simpleMessage("Total:"),
         "welcome_background_title": MessageLookupByLibrary.simpleMessage("")

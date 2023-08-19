@@ -9,6 +9,7 @@ class RestrictedDialogText extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomText.h5(
       S.of(context).restricted_dialog,
+      textAlign: TextAlign.center,
     );
   }
 

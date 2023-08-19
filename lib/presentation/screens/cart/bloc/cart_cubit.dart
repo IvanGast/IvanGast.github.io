@@ -4,7 +4,9 @@ import 'package:loggy/loggy.dart';
 import 'package:myapp/data/shared/locator.dart';
 import 'package:myapp/data/sources/local/model/cart_product.dart';
 import 'package:myapp/data/sources/remote/products_api/model/product.dart';
+import 'package:myapp/generated/l10n.dart';
 import 'package:myapp/presentation/contracts/i_cart_products_service.dart';
+import 'package:myapp/presentation/services/navigation/app_root/root_navigation_service.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 part 'cart_state.dart';
@@ -13,6 +15,7 @@ class CartCubit extends Cubit<CartState> {
   CartCubit() : super(const CartState());
 
   final _cartProductsService = locator<ICartProductsService>();
+  final _rootNavigationService = locator<RootNavigationService>();
 
   void load() async {
     logDebug('Loading cart...');
@@ -39,6 +42,8 @@ class CartCubit extends Cubit<CartState> {
         products = [...products, product];
       }
       await _cartProductsService.saveProducts(products);
+      _rootNavigationService.showSnackBar(
+          snackText: S.current.snackbar_product_added);
       emit(CartState(products: products));
     } catch (ex, st) {
       logDebug('We have error in CartCubit addCartProduct');
@@ -82,7 +87,7 @@ class CartCubit extends Cubit<CartState> {
 
   int _findIndexOfProduct(CartProduct product) {
     int index = 0;
-    for (final p  in state.products) {
+    for (final p in state.products) {
       if (p.id == product.id) {
         return index;
       } else {

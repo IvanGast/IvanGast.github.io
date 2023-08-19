@@ -15,6 +15,8 @@ double get spacing =>
 double get horizontalPadding =>
     Breakpoints.isMobile ? CustomSpaces.space1_5x : CustomSpaces.space8x;
 
+double get childAspectRatio => Breakpoints.isMobile ? 0.8 : 1;
+
 class ShopScreen extends StatelessWidget {
   const ShopScreen({super.key});
 
@@ -35,7 +37,7 @@ class ShopScreen extends StatelessWidget {
             crossAxisCount: crossAxisCount,
             mainAxisSpacing: spacing,
             crossAxisSpacing: spacing,
-            childAspectRatio: 1,
+            childAspectRatio: childAspectRatio,
             padding: EdgeInsets.symmetric(
               vertical: spacing,
               horizontal: horizontalPadding,
@@ -63,7 +65,7 @@ class _LoadingSkeleton extends StatelessWidget {
       crossAxisCount: crossAxisCount,
       mainAxisSpacing: spacing,
       crossAxisSpacing: spacing,
-      childAspectRatio: 1,
+      childAspectRatio: childAspectRatio,
       padding: EdgeInsets.symmetric(
         vertical: spacing,
         horizontal: horizontalPadding,
