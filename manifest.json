@@ -1,6 +1,6 @@
 {
-    "name": "spaceappsweb",
-    "short_name": "spaceappsweb",
+    "name": "Space Apps",
+    "short_name": "Space Apps",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
